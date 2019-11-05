@@ -1,0 +1,14 @@
+[
+    {
+        "ip":"115.29.230.200", "weather":"Clouds0","region":"shenzhen0"
+    },
+    {
+        "ip":"115.29.230.201","weather":"Clouds1","region":"shenzhen1"
+    },
+    {
+        "ip":"115.29.230.202","weather":"Clouds2","region":"shenzhen2"
+    },
+    {
+        "ip":"115.29.230.203","weather":"Clouds3","region":"shenzhen3"
+    }
+]
