@@ -23,9 +23,9 @@ mongoose.model('Article',ArticleSchema);
 const Article = mongoose.model('Article');
 
 var art = new Article({
-    title:"nodejs",
-    author:"node mongo db",
-    content:"node.js is great!",
+    title:"java",
+    author:"java mongo db",
+    content:"java is great!",
     publishTime: new Date()
 })
 
@@ -46,4 +46,12 @@ Article.find({}, function(err, docs) {
         return;
     }
     console.log("result :" + docs)
+})
+/* 查找条件 */
+Article.find({title:'nodejs'}, function(err, docs) {
+    if(err) {
+        console.log('error '+err)
+        return;
+    }
+    console.log("result nodejs:" + docs)
 })
