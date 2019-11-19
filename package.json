@@ -1,0 +1,26 @@
+{
+  "name": "nodejsdemo",
+  "version": "1.0.0",
+  "description": "nodejs study",
+  "main": "index.js",
+  "dependencies": {
+    "mongodb": "^3.3.4",
+    "mongoose": "^5.7.11"
+  },
+  "devDependencies": {
+    "assert": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Herwt-liyj/nodejsDemo.git"
+  },
+  "author": "liyujg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Herwt-liyj/nodejsDemo/issues"
+  },
+  "homepage": "https://github.com/Herwt-liyj/nodejsDemo#readme"
+}

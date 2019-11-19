@@ -1,3 +1,9 @@
+/**
+ * mongoose模块是基于node-mongodb-native开发的MongoDB的nodejs驱动，
+ * 同样使用node-mongodb-native这个原生MongoDB驱动对数据进行相应的操作
+ * https://github.com/mongodb/docs
+ * 
+ * */
 const mongoose = require("mongoose");
 
 const url = 'mongodb://admin:admin@localhost:27017/article?authSource=admin';
@@ -54,4 +60,25 @@ Article.find({title:'nodejs'}, function(err, docs) {
         return;
     }
     console.log("result nodejs:" + docs)
+})
+/* 修改update */
+Article.find({title:'nodejs'}, function(err, docs) {
+    if(err) {
+        console.log('error '+err)
+        return;
+    }
+    console.log("result nodejs:" + docs)
+    //update
+    // docs[0].title ="alibaba node.js ";
+    // docs[0].save();
+
+    console.log('update result', docs);
+
+    //删除数据
+    // if(docs) {
+    //     docs.forEach(function(e) {
+    //         e.remove();
+    //     })
+    // }
+    console.log('remove result', docs);
 })
