@@ -51,9 +51,17 @@ MongoClient.connect(url,function(err, client) {
     }
     console.log('connect success');
     const db = client.db('student');
-    innsertDoc(db,function() {
-        client.close()
+    db.collection("class").insertOne({id: 1,  name: 'jackMa', age: 15},function(err) {
+        if(err) {
+            console.log('insertMany failed');
+            return 
+        }
     })
+    console.log('insert success')
+    // client.close()
+    // innsertDoc(db,function() {
+    //     client.close()
+    // })
 })
 
 /* 打开数据库 */
