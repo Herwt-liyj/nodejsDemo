@@ -51,17 +51,67 @@ MongoClient.connect(url,function(err, client) {
     }
     console.log('connect success');
     const db = client.db('student');
-    db.collection("class").insertOne({id: 1,  name: 'jackMa', age: 15},function(err) {
-        if(err) {
-            console.log('insertMany failed');
-            return 
-        }
-    })
+    /* 插入数据 */
+    // db.collection("class").insertMany(studentArray,function(err) {
+    //     if(err) {
+    //         console.log('insertMany failed');
+    //         return 
+    //     }
+    // })
     console.log('insert success')
     // client.close()
     // innsertDoc(db,function() {
     //     client.close()
     // })
+    /* 更新 */
+    // db.collection('class').update({id:2},{$set:{"name":"updatedTestJackMa"}},{multi:true},function(err,res) {
+    //     if(err) throw err;
+    //     console.log(res.result.nModified + " 条文档被更新");
+    // })
+    /* 查询 id为升序 */
+    db.collection("class").find({}).sort({id:-1}).toArray( function(err,result) {
+        if(err) throw err;
+        console.log('find result:',result);
+    })
+    /* 删除 */
+    // db.collection('class').deleteMany({id:2},function(err,obj) {
+    //     if(err) throw err;
+    //     console.log(obj.result.n + " 条文档被删除");
+    // })
+
+    /* 查询 id为降序*/
+    db.collection("class").find({}).sort({id:1}).toArray( function(err,result) {
+        if(err) throw err;
+        console.log('ended result:',result);
+    })
+
+    /* 查询 分页 id为降序*/
+    db.collection("class").find({}).skip(3).limit(2).sort({id:-1}).toArray( function(err,result) {
+        if(err) throw err;
+        console.log('降序 分页 result:',result);
+    })
+    // https://blog.csdn.net/harleylau/article/details/77899223
+    /* 连接操作*/
+    db.collection("product").aggregate([
+        {
+            $lookup:{
+                from:"orders",         //右集合
+                localField:"_id",       //左集合字段
+                foreignField:'pid',  //右集合字段
+                as: "inventory_docs"   //新生成字段
+            }
+        }
+    ]).toArray( function(err,result) {
+        if(err) throw err;
+        console.log('连接操作 result:',result);
+    })
+
+    /* save 替换当前已有的文档 */
+    // var documents = { _id: "5dd647126c88e36af5ce88a1",
+    //     id: 2222222222,
+    //     name: '22updatedTestJackMa',
+    //     age: 25 };
+    // db.collection('class').save(documents)
 })
 
 /* 打开数据库 */
