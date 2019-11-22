@@ -92,18 +92,26 @@ MongoClient.connect(url,function(err, client) {
     })
     // https://blog.csdn.net/harleylau/article/details/77899223
     /* 连接操作*/
-    db.collection("product").aggregate([
+    db.collection("orders").aggregate([
         {
-            $lookup:{
-                from:"orders",         //右集合
-                localField:"_id",       //左集合字段
-                foreignField:'pid',  //右集合字段
-                as: "inventory_docs"   //新生成字段
+            // $lookup:{
+            //     from:"class2",         //右集合
+            //     localField:"id",       //左集合字段 当前键，product中的键
+            //     foreignField:'sid',  //右集合字段 外链接的查询的键，product中的_id的值等于 orders中pid的值为查询条件，生成重新赋值到order_list里面
+            //     as: "class_list"   //新生成字段
+            // }
+            // $match:{
+            //     id:{ $gte:1, $lte:4}
+            // }
+            $project:{
+                ordername:1,
+                pid:1
             }
         }
     ]).toArray( function(err,result) {
         if(err) throw err;
         console.log('连接操作 result:',result);
+        console.log('字符串化：',JSON.stringify(result));
     })
 
     /* save 替换当前已有的文档 */
