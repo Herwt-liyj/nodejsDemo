@@ -32,7 +32,7 @@ var studentArray = [
         age: 45
     }
 ]
-const url = 'mongodb://localhost:27017';
+const url = 'mongodb://admin:admin@localhost:27017';
 const innsertDoc = function(db,callback) {
     const collection = db.collection('documents');
     collection.insertMany(studentArray,function(err, result) {
