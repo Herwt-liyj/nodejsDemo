@@ -5,6 +5,7 @@ var config = {
     entry: [
         'webpack/hot/dev-server',
         'webpack-dev-server/client?http://localhost:8080',
+        path.resolve(__dirname,'./react/app/index.html'),
         path.resolve(__dirname, './react/app/entry.js'),
     ],
     output: {
@@ -17,7 +18,6 @@ var config = {
     module: {
         rules: [{
             test: /\.js|jsx$/,
-            exclude: /(node_modules|bower_components)/,
             use: {
                 loader: 'babel-loader'
             }
