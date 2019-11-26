@@ -10,13 +10,13 @@ document.body.appendChild(test());
 
 //react
 
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import Hello from './components/hello.jsx';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Hello from './components/hello.jsx';
 
-// function main() {
-//     console.dir('react main')
-//     ReactDOM.render(<Hello /> , document.getElementById('app'));
-// }
+function main() {
+    console.dir('react main')
+    ReactDOM.render(<Hello /> , document.getElementById('app'));
+}
 
-// main();
+main();

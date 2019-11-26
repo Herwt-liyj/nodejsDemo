@@ -1,13 +1,18 @@
 var path = require('path');
 
 var config = {
+    mode: 'development',
     devServer: {
-        contentBase: path.join(__dirname, "build")
+        contentBase: path.join(__dirname, "build"),
+        hot: true,
+        compress: true,
+        host: '0.0.0.0',
+        port: '8080',
+        open: false,
+        overlay: false,
     },
 
     entry: [
-        'webpack/hot/dev-server',
-        'webpack-dev-server/client?http://localhost:8080',
         path.resolve(__dirname, './react/app/entry.js'),
     ],
     output: {
@@ -17,14 +22,18 @@ var config = {
     resolve: {
         extensions: ['.js', '.jsx']
     },
-    // module: {
-    //     rules: [{
-    //         test: /\.js|jsx$/,
-    //         use: {
-    //             loader: 'babel-loader'
-    //         }
-    //     }]
-    // }
+    module: {
+        rules: [{
+            test: /\.js|jsx$/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-react']
+                }
+
+            }
+        }]
+    }
 }
 
 module.exports = config;
