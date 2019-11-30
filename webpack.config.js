@@ -27,10 +27,6 @@ var config = {
             test: /\.js|jsx$/,
             use: {
                 loader: 'babel-loader',
-                options: {
-                    presets: ['@babel/preset-react']
-                }
-
             }
         }]
     }
