@@ -13,14 +13,15 @@ var config = {
     },
 
     entry: [
-        path.resolve(__dirname, './react/app/entry.js'),
+        path.resolve(__dirname, './react/app/App.js'),
     ],
     output: {
         path: path.resolve(__dirname, './build/'),
         filename: 'bundle.js'
     },
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx'],
+        mainFiles: ["index","child"]
     },
     module: {
         rules: [{
