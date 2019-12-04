@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import Nav from '../components/Nav';
-import Footer  from '../components/Footer'
+import Footer  from '../components/Footer';
+import Form from '../components/Form';
 class Home extends Component {
     render() {
         return (
@@ -13,6 +14,11 @@ class Home extends Component {
                 </section>
                 {/* Link实质就是渲染为a标签 */}
                 <Link className='link-a' to='/detail'>Home页面</Link>
+
+                <section>
+                    <h2>表单</h2>
+                    <Form />
+                </section>
                 <h1>
                     <a href="#/home">Home页面</a></h1>
                 <h1>
