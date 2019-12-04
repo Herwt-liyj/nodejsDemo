@@ -1,4 +1,6 @@
 //入口文件entry.js
+// import Hello from './components/hello.jsx';
+// import Home from './views/Home';
 // var title = require('./components/title.jsx')
 
 // console.log('entryjs ----')
@@ -9,10 +11,6 @@
 // document.body.appendChild(test());
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-
-import Hello from './components/hello.jsx';
-import Home from './views/Home';
 import routes from './routes';
 
 //react
