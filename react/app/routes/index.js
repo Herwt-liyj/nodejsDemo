@@ -5,6 +5,7 @@ import Home from '../views/Home.js';
 import Login from '../views/Login.js';
 import List from '../views/List.js';
 import Detail from '../views/Detail.js';
+import App from '../App.js';
 
 const RouteConfig = [
     {
@@ -30,7 +31,7 @@ const RouteConfig = [
 ]
 const routes = (
     <HashRouter>
-        <Route path='/' component={Home} />
+        <Route path='/' component={App} />
         <Route path='/home' component={Home} />
         <Route path='/login' component={Login} />
         <Route path='/list' component={List} />

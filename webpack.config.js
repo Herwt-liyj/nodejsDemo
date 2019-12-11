@@ -13,7 +13,7 @@ var config = {
     },
 
     entry: [
-        path.resolve(__dirname, './react/app/App.js'),
+        path.resolve(__dirname, './react/app/index.js'),
     ],
     output: {
         path: path.resolve(__dirname, './build/'),
