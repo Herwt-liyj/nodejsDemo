@@ -4,7 +4,7 @@ class Login extends Component {
 
     componentDidMount() {
         //console.log(this.props.match.params);
-        console.log(this.props.history.location.state);
+        // console.log(this.props.history.location.state);
     }
 
     
