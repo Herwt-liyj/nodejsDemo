@@ -53,8 +53,6 @@ const MyRoutes = () => (
         <Route path="/detail">
             <Detail />
         </Route>
-        <Redirect  path="/">
-        </Redirect>
     </Switch>
 );
 export default MyRoutes;
